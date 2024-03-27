@@ -1,30 +1,29 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
 }
 
-nav {
-  padding: 30px;
+.router-enter-active,
+.router-leave-active {
+  /*          过度哪些元素；过度时间；过度样式，如匀速，加速过度等；延迟启动时间  */
+  transition: all 2s ease;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.router-enter,
+.router-leave-to {
+  transform: translateX(-20px);
+  /* opacity定义透明度 */
+  opacity: 0;
 }
 </style>
