@@ -89,7 +89,7 @@ router.beforeEach((to: any, from: any, next: any) => {
         } else {
             window.alert('请先登录');
             console.log('请先登录');
-            next({ path: '/login' });
+            next({ path: '/' });
         }
     } else {
         next()

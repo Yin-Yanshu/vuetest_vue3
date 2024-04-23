@@ -12,6 +12,7 @@
             <el-table-column prop="state" label="是否在库"></el-table-column>
             <el-table-column label="操作">
                 <template #default="scope">
+                    <span>{{ scope.row.auther }}</span>
                     <el-button @click="getBookLendInfo(scope.row.name)">借阅信息
                     </el-button>
                     <!-- <el-button @click="deleteBookInfo(scope.row.name)" v-if="buttonType">删除图书
@@ -128,6 +129,7 @@ onMounted(() => {
 .el-table {
     border-radius: 20px;
     height: 400;
+    border: 5px solid var(--el-aside-border-color);
 }
 
 .el-button {

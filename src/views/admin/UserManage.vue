@@ -26,6 +26,8 @@ import LendBook from '@/components/LendBook.vue';
 import { onMounted, reactive, ref } from 'vue';
 import axios from 'axios';
 // import {axios} from 'axios';因为使用解构引入导致错误，为什么不能这样引入
+// 4.9解答 axios是默认导出export default，默认导出不使用{}
+// 具名导出才使用{} 例如export const Axios使用{}导入
 import { UserInfo } from '@/interface/user/Message';
 
 const userInfo = reactive<UserInfo[]>([]);

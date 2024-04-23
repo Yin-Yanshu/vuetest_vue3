@@ -1,5 +1,5 @@
 <template>
-    <el-container id="container">
+    <el-container>
         <el-aside style="width: 170px;">
             <div class="title">图书管理系统</div>
             <div>
@@ -17,7 +17,7 @@
             </div>
         </el-aside>
         <el-container>
-            <el-header class="title_header">
+            <el-header>
                 <span class="title_span">{{ adminName }}</span>
                 <el-button class="title_button" @click="quitLogin">退出登录</el-button>
             </el-header>
@@ -64,25 +64,53 @@ onMounted(() => {
 </script>
 
 <style scoped>
-#container {
-    height: 100%;
-}
-
 .el-container {
     height: 100%;
     background-color: rgb(245, 245, 245, 0.96);
 
-    .title {
-        padding: 10px;
-        padding-top: 15px;
-        font-size: 24px;
+    /* 4.10属性值无效是什么原因 */
+    /* border-right: 5px, solid; */
+    /* .el-aside {
+        border-right: 5px solid var(--el-aside-border-color);
+
+        .title {
+            padding: 10px;
+            padding-top: 15px;
+            font-size: 24px;
+        }
+    } */
+    .el-aside {
+        background-color: rgb(255, 255, 255);
+        height: 100%;
+        border-right: 5px solid var(--el-aside-border-color);
+
+        .title {
+            padding: 10px;
+            padding-top: 15px;
+            font-size: 24px;
+        }
+
+        .nav_menu {
+            padding: 10px;
+
+            .nav_menu_item {
+                border-radius: 10px;
+                font-size: 16px;
+            }
+
+            .nav_menu_item:active {
+                background: rgb(233, 242, 255);
+            }
+        }
     }
 
     .el-header {
         background-color: rgb(255, 255, 255);
+        /* 4.10浏览器提示属性值无效 */
         box-shadow: 0, 10px, 10px;
         display: flex;
         justify-content: flex-end;
+        border: 5px, solid;
 
         .title_span {
             margin-top: 10px;
@@ -103,24 +131,6 @@ onMounted(() => {
     .el-main {
         margin: 0%;
         padding: 10px;
-    }
-}
-
-.el-aside {
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-
-    .nav_menu {
-        padding: 10px;
-    }
-
-    .nav_menu_item {
-        border-radius: 10px;
-        font-size: 16px;
-    }
-
-    .nav_menu_item:active {
-        background: rgb(233, 242, 255);
     }
 }
 </style>
